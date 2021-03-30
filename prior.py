@@ -11,6 +11,7 @@ for name in names:
 
     chunk_samples = 250
     n_chunks = int(y.shape[0]/chunk_samples)
+    # print(name)
     print(n_chunks)
 
     start = 0
@@ -22,6 +23,7 @@ for name in names:
         chunk_y = y[start:stop]
         start += chunk_samples
         classes, counts = np.unique(chunk_y, return_counts=True)
+        # print(classes, counts)
 
         if counts.shape[0] == 2:
             prior[0, i] = counts[0]/chunk_samples
@@ -44,6 +46,6 @@ for name in names:
     plt.xlabel("Data chunk", fontsize=12)
     plt.ylabel("Prior", fontsize=12)
     plt.tight_layout()
-    plt.savefig("figures/prior/%s.png" % (name), dpi=200)
+    plt.savefig("figures/prior/%s.eps" % (name), dpi=200)
     # plt.savefig("figures/%s_%i.eps" % (filename[:-4], p))
     plt.close()

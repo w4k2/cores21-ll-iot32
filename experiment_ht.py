@@ -6,8 +6,20 @@ from strlearn.ensembles import LearnppCDS, LearnppNIE, OOB, UOB, WAE, OUSE, Onli
 from skmultiflow.trees import HoeffdingTree
 import multiprocessing
 
-names = ["CTU-IoT-Malware-Capture-1-1_0", "CTU-IoT-Malware-Capture-33-1-p_2", "CTU-IoT-Malware-Capture-43-1-p_0", "CTU-IoT-Malware-Capture-43-1-p_3", "33-1-2-43-1-3"]
-n_chunks = [4000, 850, 3300, 1450, 2300]
+names = [
+            # "CTU-IoT-Malware-Capture-1-1_0",
+            "CTU-IoT-Malware-Capture-33-1-p_2",
+            "CTU-IoT-Malware-Capture-43-1-p_0",
+            # "CTU-IoT-Malware-Capture-43-1-p_3",
+            # "33-1-2-43-1-3"
+]
+n_chunks = [
+            # 4000,
+            850,
+            3300,
+            # 1450,
+            # 2300
+]
 metrics = (balanced_accuracy_score, geometric_mean_score_1, f1_score, precision, recall, specificity)
 
 base = HoeffdingTree(split_criterion='hellinger')
