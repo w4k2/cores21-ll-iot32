@@ -8,17 +8,17 @@ import multiprocessing
 
 names = [
             # "CTU-IoT-Malware-Capture-1-1_0",
-            "CTU-IoT-Malware-Capture-33-1-p_2",
-            "CTU-IoT-Malware-Capture-43-1-p_0",
+            # "CTU-IoT-Malware-Capture-33-1-p_2",
+            # "CTU-IoT-Malware-Capture-43-1-p_0",
             # "CTU-IoT-Malware-Capture-43-1-p_3",
-            # "33-1-2-43-1-3"
+            "33-1-2-43-1-32"
 ]
 n_chunks = [
             # 4000,
-            850,
-            2500,
+            # 850,
+            # 2500,
             # 1450,
-            # 2300
+            2300
 ]
 metrics = (balanced_accuracy_score, geometric_mean_score_1, f1_score, precision, recall, specificity)
 
@@ -31,7 +31,7 @@ def worker(n, name):
     # stream
     stream = ARFFParser(filepath, chunk_size=250, n_chunks=n_chunks[n])
     # evaluator
-    eval = TestThenTrain(metrics=metrics, verbose=False)
+    eval = TestThenTrain(metrics=metrics, verbose=True)
     # classifiers
     clfs = [
             SEA(base_estimator=base),

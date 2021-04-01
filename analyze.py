@@ -26,7 +26,7 @@ real = [
     "CTU-IoT-Malware-Capture-43-1-p_3",
     "CTU-IoT-Malware-Capture-1-1_0",
     "CTU-IoT-Malware-Capture-33-1-p_2",
-    "33-1-2-43-1-3",
+    "33-1-2-43-1-32",
     "CTU-IoT-Malware-Capture-43-1-p_0",
 ]
 n_chunks = [
@@ -34,7 +34,7 @@ n_chunks = [
             4000,
             850,
             2300,
-            3300,
+            2500,
 ]
 
 # which = "ht"
